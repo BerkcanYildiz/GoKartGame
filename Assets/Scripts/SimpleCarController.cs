@@ -6,10 +6,6 @@ using System.Collections.Generic;
 public class AxleInfo {
     public WheelCollider leftWheel;
     public WheelCollider rightWheel;
-    public Transform frontLeftWheelTransform;
-    public Transform frontRightWheelTransform;
-    public Transform rearLeftWheelTransform;
-    public Transform rearRightWheelTransform;
     public bool motor; 
     public bool steering; 
 }
