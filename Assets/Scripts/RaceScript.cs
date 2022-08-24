@@ -24,7 +24,7 @@ public class RaceScript : MonoBehaviour
         {
             laptime = laptime +  Time.deltaTime;    
             // Debug.Log(laptime);
-            Ltime.text = laptime.ToString("F3");
+            Ltime.text = "Time: " + laptime.ToString("F3");
         }
     }
 
