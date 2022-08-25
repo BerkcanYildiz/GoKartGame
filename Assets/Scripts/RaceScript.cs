@@ -1,12 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RaceScript : MonoBehaviour
 {
     public float laptime;
     private bool startTimer = false;
+
+    private bool checkPoint1 = false;
+    private bool checkPoint2 = false;
+    
     public UnityEngine.UI.Text Ltime;
     
     
@@ -30,8 +35,20 @@ public class RaceScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("test");
+        if (other.gameObject.name == "StartFinish")
+        {
+            startTimer = true;
+            checkPoint1 = false;
+            checkPoint2 = false;
+        }
 
-        startTimer = true;
+        if (other.gameObject.name == "checkPoint1")
+        {
+            checkPoint1 = true;
+        }
+        if (other.gameObject.name == "checkPoint2")
+        {
+            checkPoint2 = true;
+        }
     }
 }
