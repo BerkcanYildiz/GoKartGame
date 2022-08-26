@@ -37,9 +37,16 @@ public class RaceScript : MonoBehaviour
     {
         if (other.gameObject.name == "StartFinish")
         {
-            startTimer = true;
-            checkPoint1 = false;
-            checkPoint2 = false;
+            if (checkPoint1 == true && checkPoint2 == true) 
+            {
+                startTimer = false;
+            }
+            else
+            {
+                startTimer = true;
+                checkPoint1 = false;
+                checkPoint2 = false;
+            }
         }
 
         if (other.gameObject.name == "checkPoint1")
