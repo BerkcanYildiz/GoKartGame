@@ -33,6 +33,12 @@ public class RaceScript : MonoBehaviour
     {
         if (other.gameObject.name == "StartFinish")
         {
+            if (startTimer == false)
+            {
+                startTimer = true;
+                checkPoint1 = false;
+                checkPoint2 = false;
+            }
             if (checkPoint1 == true && checkPoint2 == true) 
             {
                 startTimer = false;
@@ -49,12 +55,6 @@ public class RaceScript : MonoBehaviour
                 }
 
                 BTime.text = "Best: " + bestTime.ToString("F3");
-            }
-            else
-            {
-                startTimer = true;
-                checkPoint1 = false;
-                checkPoint2 = false;
             }
         }
 
