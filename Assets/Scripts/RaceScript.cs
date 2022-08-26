@@ -6,22 +6,18 @@ using UnityEngine;
 
 public class RaceScript : MonoBehaviour
 {
-    public float laptime;
+    
+    
+    public float laptime = 0;
+    public float bestTime = 0;
     private bool startTimer = false;
 
     private bool checkPoint1 = false;
     private bool checkPoint2 = false;
     
     public UnityEngine.UI.Text Ltime;
+    public UnityEngine.UI.Text BTime;
     
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -40,6 +36,19 @@ public class RaceScript : MonoBehaviour
             if (checkPoint1 == true && checkPoint2 == true) 
             {
                 startTimer = false;
+                
+                if (bestTime == 0)
+                {
+                    bestTime = laptime;
+                    Debug.Log(bestTime);
+                }
+                if (laptime < bestTime)
+                {
+                    bestTime = laptime; 
+                    Debug.Log(bestTime);
+                }
+
+                BTime.text = "Best: " + bestTime.ToString("F3");
             }
             else
             {
