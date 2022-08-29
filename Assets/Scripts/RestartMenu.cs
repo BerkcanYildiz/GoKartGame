@@ -7,6 +7,8 @@ public class RestartMenu : MonoBehaviour
 {   
     
     public string afterCollisionLevel;
+
+    public string mainMenu;
     // Update is called once per frame
     void Update()
     {
@@ -19,8 +21,8 @@ public class RestartMenu : MonoBehaviour
         SceneManager.LoadScene(afterCollisionLevel);
     }
 
-    public void QuitGame()
+    public void MainMenuButton()
     {
-        Application.Quit();
+        SceneManager.LoadScene(mainMenu);
     }
 }
