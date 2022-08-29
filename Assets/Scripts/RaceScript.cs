@@ -35,6 +35,7 @@ public class RaceScript : MonoBehaviour
         {
             if (startTimer == false)
             {
+                
                 startTimer = true;
                 checkPoint1 = false;
                 checkPoint2 = false;
@@ -46,12 +47,10 @@ public class RaceScript : MonoBehaviour
                 if (bestTime == 0)
                 {
                     bestTime = laptime;
-                    Debug.Log(bestTime);
                 }
                 if (laptime < bestTime)
                 {
-                    bestTime = laptime; 
-                    Debug.Log(bestTime);
+                    bestTime = laptime;
                 }
 
                 BTime.text = "Best: " + bestTime.ToString("F3");
@@ -65,6 +64,14 @@ public class RaceScript : MonoBehaviour
         if (other.gameObject.name == "checkPoint2")
         {
             checkPoint2 = true;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "TrackLimit")
+        {
+            Debug.Log("You hit the wall.");
         }
     }
 }

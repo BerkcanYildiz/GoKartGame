@@ -1343,7 +1343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3374474453900846415, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
       propertyPath: m_Mass
-      value: 2000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5223429399262309916, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
       propertyPath: m_ForceAppPointDistance
@@ -1457,8 +1457,8 @@ MonoBehaviour:
     rightWheel: {fileID: 1307993425}
     motor: 0
     steering: 0
-  maxMotorTorque: 1500
-  maxSteeringAngle: 30
+  maxMotorTorque: 750
+  maxSteeringAngle: 45
 --- !u!4 &1307993434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6948587442945639655, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
