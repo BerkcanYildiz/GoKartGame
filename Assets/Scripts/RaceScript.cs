@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RaceScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class RaceScript : MonoBehaviour
     public float bestTime = 0;
     private bool startTimer = false;
 
+    public string afterCollisionMenu;
     private bool checkPoint1 = false;
     private bool checkPoint2 = false;
     
@@ -71,6 +73,7 @@ public class RaceScript : MonoBehaviour
     {
         if (collision.gameObject.name == "TrackLimit")
         {
+            SceneManager.LoadScene(afterCollisionMenu);
             Debug.Log("You hit the wall.");
         }
     }
