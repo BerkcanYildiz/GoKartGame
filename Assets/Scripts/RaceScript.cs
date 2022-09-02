@@ -1,64 +1,53 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RaceScript : MonoBehaviour
 {
-    
-    
-    public float laptime = 0;
-    public float bestTime = 0;
-    private bool startTimer = false;
-
-    public string afterCollisionMenu;
-    private bool checkPoint1 = false;
-    private bool checkPoint2 = false;
-    
     public UnityEngine.UI.Text Ltime;
     public UnityEngine.UI.Text BTime;
+    public float LapTime = 0;
+    public float bestTime = 0;
+    public string afterCollisionMenu;
     
-    // Update is called once per frame
-    void Update()
+    private bool checkPoint1 = false;
+    private bool checkPoint2 = false;
+    private bool startTimer = false;
+    
+    private void Update()
     {
-        if (startTimer == true)
+        if (startTimer)
         {
-            laptime = laptime +  Time.deltaTime;    
+            LapTime += Time.deltaTime;    
             // Debug.Log(laptime);
-            Ltime.text = "Time: " + laptime.ToString("F3");
+            Ltime.text = "Time: " + LapTime.ToString("F3");
         }
     }
-
-    void OnTriggerEnter(Collider other)
+    
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "StartFinish")
         {
             if (startTimer == false)
             {
-                
                 startTimer = true;
                 checkPoint1 = false;
                 checkPoint2 = false;
             }
-            if (checkPoint1 == true && checkPoint2 == true) 
+            if (checkPoint1 && checkPoint2) 
             {
                 startTimer = false;
                 
                 if (bestTime == 0)
                 {
-                    bestTime = laptime;
+                    bestTime = LapTime;
                 }
-                if (laptime < bestTime)
+                if (LapTime < bestTime)
                 {
-                    bestTime = laptime;
+                    bestTime = LapTime;
                 }
-
                 BTime.text = "Best: " + bestTime.ToString("F3");
             }
         }
-
         if (other.gameObject.name == "checkPoint1")
         {
             checkPoint1 = true;
@@ -68,7 +57,6 @@ public class RaceScript : MonoBehaviour
             checkPoint2 = true;
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "TrackLimit")

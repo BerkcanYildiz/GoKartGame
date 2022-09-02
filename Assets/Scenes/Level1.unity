@@ -1478,6 +1478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laptime: 0
   bestTime: 0
+  lapFailed: CollisionMenu
   afterCollisionMenu: CollisionMenu
   Ltime: {fileID: 1840103828}
   BTime: {fileID: 1071129391}
