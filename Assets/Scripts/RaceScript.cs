@@ -7,7 +7,7 @@ public class RaceScript : MonoBehaviour
     public UnityEngine.UI.Text BTime;
     public float LapTime = 0;
     public float bestTime = 0;
-    public string afterCollisionMenu;
+    
     
     private bool checkPoint1 = false;
     private bool checkPoint2 = false;
@@ -57,12 +57,5 @@ public class RaceScript : MonoBehaviour
             checkPoint2 = true;
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "TrackLimit")
-        {
-            SceneManager.LoadScene(afterCollisionMenu);
-            Debug.Log("You hit the wall.");
-        }
-    }
+  
 }
