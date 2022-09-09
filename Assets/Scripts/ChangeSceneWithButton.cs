@@ -3,14 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class ChangeSceneWithButton : MonoBehaviour
 {
-   [SerializeField] private string afterCollisionMenu;  
+   // [SerializeField] private string afterCollisionMenu;  
    private void LoadScene(string sceneName)
    {
       SceneManager.LoadScene(sceneName);
    }
 
-   private void OnCollisionEnter(Collision collision)
+   /* private void OnCollisionEnter(Collision collision)
    {
       SceneManager.LoadScene(afterCollisionMenu);
-   }
+   } */
 }

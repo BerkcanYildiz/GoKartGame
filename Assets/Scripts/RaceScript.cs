@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 
 public class RaceScript : MonoBehaviour
 {
+    public GameObject GameOverScreen;
     private UnityEngine.UI.Text Ltime;
     private UnityEngine.UI.Text BTime;
     private float LapTime = 0;
@@ -14,6 +16,7 @@ public class RaceScript : MonoBehaviour
     
     private void Update()
     {
+        
         if (startTimer)
         {
             LapTime += Time.deltaTime;    
@@ -55,5 +58,10 @@ public class RaceScript : MonoBehaviour
         {
             checkPoint2 = true;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameOverScreen.SetActive(true);
     }
 }

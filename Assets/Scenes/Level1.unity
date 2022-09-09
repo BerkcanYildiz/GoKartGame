@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 69024516}
   m_Layer: 0
-  m_Name: checkPoints (Included Start/Finish)
+  m_Name: checkPoints (Including Start/Finish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2263,6 +2263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 7720726507797323357, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7887936941379631419, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
       propertyPath: m_ForceAppPointDistance
       value: 0
@@ -2338,6 +2342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8755b6eeabd3047a98cd7e617143c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 0}
 --- !u!114 &1307993438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2350,7 +2355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3a770d24fab1c43adf812e2394be01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterCollisionMenu: CollisionMenu
 --- !u!54 &1307993439 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3374474453900846415, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
