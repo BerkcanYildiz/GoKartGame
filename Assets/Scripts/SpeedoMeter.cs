@@ -1,4 +1,3 @@
-using System;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -6,15 +5,15 @@ public class SpeedoMeter : MonoBehaviour
 {
     public Rigidbody target;
 
-    public float maxSpeed = 0.0f; // the max speed of the target 
-    public float minSpeedArrowAngle;
-    public float maxSpeedArrowAngle;
+    [SerializeField] private float maxSpeed; // the max speed of the target 
+    [SerializeField] private float minSpeedArrowAngle;
+    [SerializeField] private float maxSpeedArrowAngle;
 
     [Header("UI")] 
-    public Text speedLabel; // the label that displays the speed
+    private Text speedLabel; // the label that displays the speed
     public RectTransform arrow; // the arrow in the speedometer
 
-    private float speed = 0.0f;
+    private float speed;
     private void Update()
     {
         // 3.6f to convert in kilometers
@@ -22,10 +21,8 @@ public class SpeedoMeter : MonoBehaviour
         speed = target.velocity.magnitude * 3.6f;
 
         if (speedLabel != null)
-            speedLabel.text = speed + " km/h";
-        if (arrow !=  null)
-            arrow.localEulerAngles =
-                new Vector3(0, 0,Mathf.Lerp(minSpeedArrowAngle, maxSpeedArrowAngle, speed / maxSpeed) );
-
+            speedLabel.text = $"{speed.ToString()} km/h";
+        
+        arrow.localEulerAngles = new Vector3(0, 0,Mathf.Lerp(minSpeedArrowAngle, maxSpeedArrowAngle, speed / maxSpeed) );
     }
 }

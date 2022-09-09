@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeSceneWithButton : MonoBehaviour
 {
-   public string afterCollisionMenu;  
-   public void LoadScene(string sceneName)
+   [SerializeField] private string afterCollisionMenu;  
+   private void LoadScene(string sceneName)
    {
       SceneManager.LoadScene(sceneName);
    }

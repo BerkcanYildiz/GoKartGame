@@ -1,14 +1,12 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class RaceScript : MonoBehaviour
 {
-    public UnityEngine.UI.Text Ltime;
-    public UnityEngine.UI.Text BTime;
-    public float LapTime = 0;
-    public float bestTime = 0;
+    private UnityEngine.UI.Text Ltime;
+    private UnityEngine.UI.Text BTime;
+    private float LapTime = 0;
+    private float bestTime = 0;
     
     private bool checkPoint1 = false;
     private bool checkPoint2 = false;
