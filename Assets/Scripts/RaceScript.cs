@@ -59,7 +59,6 @@ public class RaceScript : MonoBehaviour
             checkPoint2 = true;
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         GameOverScreen.SetActive(true);
