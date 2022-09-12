@@ -5,8 +5,8 @@ using UnityEngine;
 public class RaceScript : MonoBehaviour
 {
     [SerializeField] private GameObject GameOverScreen;
-    private UnityEngine.UI.Text Ltime;
-    private UnityEngine.UI.Text BTime;
+    [SerializeField] private UnityEngine.UI.Text Ltime;
+    [SerializeField] private UnityEngine.UI.Text BTime;
     private float LapTime = 0;
     private float bestTime = 0;
     
